@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_online_june_project/screens/container_demo_screen.dart';
+import 'package:flutter_online_june_project/screens/first_screen.dart';
+import 'package:flutter_online_june_project/screens/row_and_column_demo_screen.dart';
 
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const ContainerDemoScreen(), // Launcher screen
+      home: const RowAndColumnDemoScreen() // Launcher screen
     );
   }
 }

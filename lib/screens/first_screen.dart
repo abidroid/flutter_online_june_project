@@ -16,16 +16,18 @@ class FirstScreen extends StatelessWidget {
         centerTitle: true,
       ),
 
-      body: Text("Flutter is fun ",
+      body: SingleChildScrollView(
+        child: Text("Flutter is fun Flutter is fun Flutter is fun Flutter is fun Flutter is fun Flutter is fun Flutter is fun Flutter is fun Flutter is fun Flutter is fun Flutter is fun Flutter is fun Flutter is fun The End  ",
 
-        style: TextStyle(
-          color: Colors.purple,
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-          fontStyle: FontStyle.italic,
-          backgroundColor: Colors.yellow,
+          style: TextStyle(
+            color: Colors.purple,
+            fontSize: 60,
+            fontWeight: FontWeight.bold,
+            fontStyle: FontStyle.italic,
+            backgroundColor: Colors.yellow,
+          ),
+
         ),
-
       ),
     );
   }
