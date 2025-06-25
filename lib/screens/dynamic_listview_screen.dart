@@ -8,6 +8,18 @@ class DynamicListviewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    // Hard coded
+    var shoppingList = [
+      "Milk",
+      "Honey",
+      "Bread",
+      "Vegetable",
+      "Fruit",
+      "Laptop Bag",
+      "Tea",
+      "Green Tea",
+    ];
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Dynamic LV'),
@@ -16,17 +28,18 @@ class DynamicListviewScreen extends StatelessWidget {
       ),
       body: ListView.builder(
 
-          itemCount: 200000,
+          itemCount: shoppingList.length,
 
           itemBuilder: ( BuildContext context, int index){
 
             return Card(
+              color: Colors.amber[100],
               child: ListTile(
                 leading: CircleAvatar(
                   child: Text( index.toString()),
                 ),
 
-                title: Text('Item # $index'),
+                title: Text(shoppingList[index]),
               ),
             );
           }
