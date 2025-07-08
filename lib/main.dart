@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_online_june_project/screens/buttons_demo_screen.dart';
 import 'package:flutter_online_june_project/screens/cross_axis_demo_screen.dart';
 import 'package:flutter_online_june_project/screens/doctor_list_screen.dart';
 import 'package:flutter_online_june_project/screens/dynamic_gridview_screen.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const DynamicGridviewScreen() // Launcher screen
+      home: const ButtonsDemoScreen() // Launcher screen
     );
   }
 }
