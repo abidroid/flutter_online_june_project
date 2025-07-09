@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/rangeen_button.dart';
+
 class ButtonsDemoScreen extends StatelessWidget {
   const ButtonsDemoScreen({super.key});
 
@@ -50,62 +52,16 @@ class ButtonsDemoScreen extends StatelessWidget {
           ),
 
           IconButton(onPressed: (){}, icon: Icon(Icons.settings)),
-        
-          InkWell(
-            onTap: (){
-              print('Custom Button Tapped');
-            },
-            child: Material(
-              child: Container(
-                width: 200,
-                height: 40,
-               
-                decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16),
-                gradient: LinearGradient(colors: [Colors.purple, Colors.orange])
-                ),
-                child: Center(child: Text('Delete App', style: TextStyle(color: Colors.white, fontSize: 18),)),
-              ),
-            ),
-          ),
 
-          InkWell(
-            onTap: (){
-              print('Custom Button Tapped');
-            },
-            child: Material(
-              child: Container(
-                width: 200,
-                height: 40,
+          // Re-usable Custom Widget
 
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    gradient: LinearGradient(colors: [Colors.purple, Colors.orange])
-                ),
-                child: Center(child: Text('Visit Instagram', style: TextStyle(color: Colors.white, fontSize: 18),)),
-              ),
-            ),
-          ),
+          RangeenButton(title: 'SIGN UP', rangeenButtonTap: (){}),
+          RangeenButton(title: 'Test', rangeenButtonTap: (){}, width: 100,),
+          // RangeenButton(),
 
-          InkWell(
-            onTap: (){
-              print('Custom Button Tapped');
-            },
-            child: Material(
-              child: Container(
-                width: 200,
-                height: 40,
-
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    gradient: LinearGradient(colors: [Colors.purple, Colors.orange])
-                ),
-                child: Center(child: Text('Close Account', style: TextStyle(color: Colors.white, fontSize: 18),)),
-              ),
-            ),
-          ),
         ],
       ),
     );
   }
 }
+

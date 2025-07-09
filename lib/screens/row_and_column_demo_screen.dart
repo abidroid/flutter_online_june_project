@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_online_june_project/widgets/rangeen_button.dart';
 
 class RowAndColumnDemoScreen extends StatelessWidget {
   const RowAndColumnDemoScreen({super.key});
@@ -13,18 +14,33 @@ class RowAndColumnDemoScreen extends StatelessWidget {
         centerTitle: true,
       ),
       body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        spacing: 2,
+       spacing: 2,
 
         children: [
+          RangeenButton(
+            width: 300,
+            title: 'LOGIN',
+            rangeenButtonTap: () {
+              print('User will be logged in');
+            },
+          ),
 
           Expanded(child: Container(color: Colors.green)),
 
           Expanded(child: Container(color: Colors.red)),
 
+          RangeenButton(
+            title: 'REGISTER',
+            rangeenButtonTap: () {
+              print('REGISTER clicked');
+            },
+          ),
           Container(
-              alignment: Alignment.center,
-              height: 50, color: Colors.teal, child: Text('Banner Ad')),
+            alignment: Alignment.center,
+            height: 50,
+            color: Colors.teal,
+            child: Text('Banner Ad'),
+          ),
         ],
       ),
     );
