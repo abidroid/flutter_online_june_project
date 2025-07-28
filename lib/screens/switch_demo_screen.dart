@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_online_june_project/widgets/rangeen_button.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class SwitchDemoScreen extends StatefulWidget {
   const SwitchDemoScreen({super.key});
@@ -41,7 +43,36 @@ class _SwitchDemoScreenState extends State<SwitchDemoScreen> {
                   });
                 }),
               ],
-            )
+            ),
+
+
+            ElevatedButton(onPressed: (){
+
+              Fluttertoast.showToast(msg: 'Bulb is ${switchKaStatus ? 'ON' : 'OFF'}',
+              fontSize: 30,
+                backgroundColor: Colors.red,
+                gravity: ToastGravity.CENTER,
+              );
+
+            }, child: const Text("Show Message")),
+
+            Card(
+
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Row(
+                  children: [
+                    Text('Wifi'),
+                    Icon(Icons.wifi),
+                    Spacer(),
+                    Switch(value: true, onChanged: (isChecked){},)
+
+                  ],
+                ),
+              ),
+            ),
+
+            RangeenButton(title: 'Demo', rangeenButtonTap: (){}),
           ],
         ),
       ),
