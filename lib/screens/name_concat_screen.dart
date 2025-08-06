@@ -84,6 +84,10 @@ class _NameConcatScreenState extends State<NameConcatScreen> {
             Gap(20),
 
             Text(fullName),
+
+            OutlinedButton(onPressed: (){
+              Navigator.of(context).pop();
+            }, child: const Text("Go Back")),
           ],
         ),
       ),

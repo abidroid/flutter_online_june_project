@@ -7,6 +7,7 @@ import 'package:flutter_online_june_project/screens/dynamic_gridview_screen.dart
 import 'package:flutter_online_june_project/screens/dynamic_listview_screen.dart';
 import 'package:flutter_online_june_project/screens/first_screen.dart';
 import 'package:flutter_online_june_project/screens/images_demo_screen.dart';
+import 'package:flutter_online_june_project/screens/landing_screen.dart';
 import 'package:flutter_online_june_project/screens/listview_demo_screen.dart';
 import 'package:flutter_online_june_project/screens/name_concat_screen.dart';
 import 'package:flutter_online_june_project/screens/row_and_column_demo_screen.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const NameConcatScreen() // Launcher screen
+      home: const LandingScreen() // Launcher screen
     );
   }
 }
