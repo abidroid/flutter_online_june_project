@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_online_june_project/screens/doctor_detail_screen.dart';
 import 'package:flutter_online_june_project/widgets/doctor_card.dart';
 import '../data_store/data_store.dart';
 import '../models/doctor.dart';
@@ -24,7 +25,14 @@ class DoctorListScreen extends StatelessWidget {
 
               Doctor doctor = doctors[index];
               // Custom widget
-              return DoctorCard(doctor: doctor, color: colorList[index]);
+              return InkWell(
+                  onTap: (){
+
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                      return DoctorDetailScreen(daku: doctor);
+                    }));
+                  },
+                  child: DoctorCard(doctor: doctor, color: colorList[index]));
             }),
       ),
     );

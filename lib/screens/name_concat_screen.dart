@@ -5,7 +5,9 @@ import 'package:flutter_online_june_project/models/doctor.dart';
 import 'package:gap/gap.dart';
 
 class NameConcatScreen extends StatefulWidget {
-  const NameConcatScreen({super.key});
+
+  final String nama;
+  const NameConcatScreen({super.key, required this.nama});
 
   @override
   State<NameConcatScreen> createState() => _NameConcatScreenState();
@@ -25,7 +27,7 @@ class _NameConcatScreenState extends State<NameConcatScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Name Concate'),
+        title:  Text('Name ${widget.nama}'),
         backgroundColor: Colors.green,
         foregroundColor: Colors.white,
       ),
