@@ -5,6 +5,8 @@ import 'package:flutter_online_june_project/screens/color_change_demo_screen.dar
 import 'package:flutter_online_june_project/screens/doctor_list_screen.dart';
 import 'package:flutter_online_june_project/screens/dynamic_gridview_screen.dart';
 import 'package:flutter_online_june_project/screens/name_concat_screen.dart';
+import 'package:flutter_online_june_project/screens/shared_prefs_demo_screen.dart';
+import 'package:flutter_online_june_project/screens/switch_demo_screen.dart';
 import 'package:flutter_online_june_project/screens/welcome_screen.dart';
 import 'package:gap/gap.dart';
 
@@ -29,6 +31,13 @@ class _LandingScreenState extends State<LandingScreen> {
       ),
       body: ListView(
         children: [
+
+          ElevatedButton(onPressed: (){
+            Navigator.of(context).push(MaterialPageRoute(builder: (context){
+              return SwitchDemoScreen();
+            }));
+
+          }, child: const Text('Persist Bulb State using SP')),
           ElevatedButton(onPressed: (){
 
             String noom = tfC.text;
@@ -56,6 +65,17 @@ class _LandingScreenState extends State<LandingScreen> {
               return DynamicGridviewScreen();
             }));
           }, child: const Text('Doctor List Screen')),
+
+          ElevatedButton(onPressed: (){
+            Navigator.of(context).push(MaterialPageRoute(builder: (context){
+              return SharedPrefsDemoScreen();
+            }));
+
+          }, child: const Text('Shared Prefs Demo')),
+
+
+
+
           ElevatedButton(onPressed: (){
 
             String name = tfC.text;

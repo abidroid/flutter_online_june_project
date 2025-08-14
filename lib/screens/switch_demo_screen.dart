@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_online_june_project/widgets/rangeen_button.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class SwitchDemoScreen extends StatefulWidget {
   const SwitchDemoScreen({super.key});
@@ -14,6 +15,23 @@ class _SwitchDemoScreenState extends State<SwitchDemoScreen> {
 
   // state variable
   bool switchKaStatus = true;
+
+  @override
+  void initState() {
+    readStoredValue();
+    super.initState();
+  }
+
+  readStoredValue() async{
+    final SharedPreferencesAsync asyncPrefs = SharedPreferencesAsync();
+
+    switchKaStatus = await asyncPrefs.getBool('bijli') ?? false;
+
+    setState(() {
+
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -36,10 +54,20 @@ class _SwitchDemoScreenState extends State<SwitchDemoScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('Bulb Status', style: TextStyle(fontSize: 20),),
-                Switch(value: switchKaStatus, onChanged: (bool isChecked){
+                Switch(value: switchKaStatus,
+                    onChanged: (bool isChecked) async {
+
+                  // Save the bulb status in Shared Preferences
+
+                      final SharedPreferencesAsync asyncPrefs = SharedPreferencesAsync();
+
+                      switchKaStatus = isChecked;
+
+                      await asyncPrefs.setBool('bijli', switchKaStatus);
+
 
                   setState(() {
-                    switchKaStatus = isChecked;
+
                   });
                 }),
               ],
